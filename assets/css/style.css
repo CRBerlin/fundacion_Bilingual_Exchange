@@ -1,9 +1,88 @@
 :root{
-    --verde:#248462;
+    --verde:#246642;
     --beige:#F5ECDD;
     --oscuro:#1E1E1E;
 }
 
 body{
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #000;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.custom-navbar{
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    padding-top: 20px;
+}
+
+.navbar-nav{
+    gap: 20px;
+}
+
+.nav-link{
+    color: white !important;
+    font-size: 17px;
+}
+
+.language-link{
+    color: white;
+    text-decoration: none;
+}
+
+.btn-register{
+    background-color: var(--verde);
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.btn-register:hover{
+    background-color: #1d5335;
+    color: white;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position: relative;
+    min-height: 100vh;
+
+    background-image: url('../img/hero.jpg');
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+}
+
+.overlay{
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.55);
+}
+
+.hero-content{
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1{
+    color: white;
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero p{
+    color: white;
+    font-size: 18px;
+    max-width: 700px;
 }
