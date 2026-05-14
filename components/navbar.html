@@ -1,45 +1,61 @@
 <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
     <div class="container">
+
         <!-- LOGO -->
         <a class="navbar-brand" href="#">
-            <img src="assets/img/logo.png" alt="Logo" height="50">
+            <img src="../assets/img/logo_horizontal.png" alt="Bilingual Exchange" class="logo-navbar">
         </a>
+
         <!-- BOTON MOBILE -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#menu">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <!-- MENU -->
         <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        ¿Quiénes Somos?
-                    </a>
+                    <a class="nav-link translate" data-key="nav_about" href="#"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        Programa para extranjeros
-                    </a>
+                    <a class="nav-link translate" data-key="nav_program" href="#"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        Hospedaje
-                    </a>
+                    <a class="nav-link translate" data-key="nav_accommodation" href="#"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        Voluntariado
-                    </a>
+                    <a class="nav-link translate" data-key="nav_volunteering" href="#"></a>
                 </li>
             </ul>
+
             <!-- DERECHA -->
-            <div class="d-flex align-items-center gap-3">
-                <a href="#" class="language-link">
-                    EN
-                </a>
-                <a href="#" class="btn btn-register">
-                    Regístrate
-                </a>
+            <div class="navbar-right d-flex align-items-center">
+                <!-- SELECTOR IDIOMA -->
+                <div class="dropdown language-selector">
+                    <button class="language-button dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-globe2"></i>
+                        <span id="currentLanguage">
+                            ES
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end language-dropdown">
+                        <li>
+                            <button class="dropdown-item change-language" data-language="es">
+                                Español
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item change-language" data-language="en">
+                                English
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- BOTON -->
+                <a href="#" class="btn-register translate" data-key="nav_register"></a>
+
             </div>
         </div>
     </div>

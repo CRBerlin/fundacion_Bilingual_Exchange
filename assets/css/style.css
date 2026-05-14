@@ -1,79 +1,161 @@
-:root{
-    --verde:#246642;
-    --beige:#F5ECDD;
-    --oscuro:#1E1E1E;
+/* ======================================
+   VARIABLES
+====================================== */
+
+:root {
+    --verde: #246642;
+    --beige: #F5ECDD;
+    --oscuro: #1E1E1E;
 }
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
+
+/* ======================================
+   BASE
+====================================== */
+
+body {
+    font-family: 'Roboto', sans-serif;
     background-color: #000;
 }
 
-/* =========================
-   NAVBAR
-========================= */
 
-.custom-navbar{
+/* ======================================
+   NAVBAR
+====================================== */
+
+.custom-navbar {
     position: absolute;
+    top: 20px;
+    left: 0;
     width: 100%;
     z-index: 1000;
-    padding-top: 20px;
 }
 
-.navbar-nav{
-    gap: 20px;
+.custom-navbar .container {
+    background-color: rgba(68, 68, 68, 0.33);
+    backdrop-filter: blur(5px);
+    border-radius: 22px;
+    height: 100px;
+    padding-left: 28px;
+    padding-right: 28px;
 }
 
-.nav-link{
+.logo-navbar {
+    height: 48px;
+    width: auto;
+}
+
+.navbar-nav {
+    gap: 18px;
+}
+
+.nav-link {
     color: white !important;
-    font-size: 17px;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 0 !important;
+    transition: 0.3s ease;
 }
 
-.language-link{
+.nav-link:hover {
+    color: var(--beige) !important;
+}
+
+.navbar-right {
+    gap: 18px;
+}
+
+
+/* ======================================
+   LANGUAGE SELECTOR
+====================================== */
+
+.language-button {
+    background: transparent;
+    border: none;
     color: white;
-    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
-.btn-register{
+.language-button:hover {
+    color: var(--beige);
+}
+
+.language-button::after {
+    margin-left: 8px;
+}
+
+.language-dropdown {
+    background-color: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.language-dropdown .dropdown-item {
+    color: white;
+    padding: 12px 18px;
+    transition: 0.3s ease;
+}
+
+.language-dropdown .dropdown-item:hover {
     background-color: var(--verde);
     color: white;
+}
+
+/* ======================================
+   BUTTONS
+====================================== */
+
+.btn-register {
+    background-color: var(--verde);
+    color: white !important;
+    text-decoration: none;
     border-radius: 10px;
     padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 400;
+    transition: 0.3s ease;
 }
 
-.btn-register:hover{
+.btn-register:hover {
     background-color: #1d5335;
-    color: white;
 }
 
-/* =========================
-   HERO
-========================= */
 
-.hero{
+/* ======================================
+   HERO
+====================================== */
+
+.hero {
     position: relative;
     min-height: 100vh;
-
     background-image: url('../img/hero.jpg');
     background-size: cover;
     background-position: center;
-
     display: flex;
     align-items: center;
 }
 
-.overlay{
+.overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(0,0,0,0.55);
+    background-color: rgba(0, 0, 0, 0.55);
 }
 
-.hero-content{
+.hero-content {
     position: relative;
     z-index: 2;
 }
 
-.hero h1{
+.hero h1 {
     color: white;
     font-size: 70px;
     font-weight: 800;
@@ -81,8 +163,42 @@ body{
     margin-bottom: 20px;
 }
 
-.hero p{
+.hero p {
     color: white;
     font-size: 18px;
     max-width: 700px;
+}
+
+
+/* ======================================
+   MEDIA QUERIES
+====================================== */
+
+@media (max-width: 991px) {
+    .custom-navbar {
+        top: 10px;
+    }
+
+    .custom-navbar .container {
+        height: auto;
+
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .navbar-collapse {
+        margin-top: 25px;
+    }
+
+    .navbar-nav {
+        gap: 15px;
+
+        margin-bottom: 20px;
+    }
+
+    .navbar-right {
+        flex-direction: column;
+
+        align-items: flex-start !important;
+    }
 }
