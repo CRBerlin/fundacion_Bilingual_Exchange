@@ -7,16 +7,14 @@ function cargarComponente(id, archivo) {
         .then(response => response.text())
         .then(data => {
             document.getElementById(id).innerHTML = data;
-
-            if (id === 'navbar') {
-                initializeLanguageSystem();
-            }
+            translatePage();
         });
 }
 
 cargarComponente('navbar', 'components/navbar.html');
 cargarComponente('registro', 'components/registro.html');
 cargarComponente('footer', 'components/footer.html');
+
 
 /* ======================================
    IDIOMAS
@@ -25,20 +23,25 @@ cargarComponente('footer', 'components/footer.html');
 let currentLanguage = 'es';
 
 function translatePage() {
-    const currentLanguageElement = document.getElementById('currentLanguage');
-
+    const currentLanguageElement =
+        document.getElementById('currentLanguage');
     if (currentLanguageElement) {
         currentLanguageElement.textContent =
             translations[currentLanguage].language_short;
     }
-
     document.querySelectorAll('.translate')
         .forEach(element => {
-
             const key = element.dataset.key;
-
             if (translations[currentLanguage][key]) {
                 element.textContent =
+                    translations[currentLanguage][key];
+            }
+        });
+    document.querySelectorAll('.translate-placeholder')
+        .forEach(element => {
+            const key = element.dataset.key;
+            if (translations[currentLanguage][key]) {
+                element.placeholder =
                     translations[currentLanguage][key];
             }
         });
@@ -49,16 +52,13 @@ function changeLanguage(language) {
     translatePage();
 }
 
-function initializeLanguageSystem() {
-    document.addEventListener('click', function (e) {
+document.addEventListener('click', function (e) {
+    const button = e.target.closest('.change-language');
+    if (button) {
+        const selectedLanguage =
+            button.dataset.language;
+        changeLanguage(selectedLanguage);
+    }
+});
 
-        const button = e.target.closest('.change-language');
-
-        if (button) {
-            const selectedLanguage = button.dataset.language;
-            changeLanguage(selectedLanguage);
-        }
-    });
-
-    translatePage();
-}
+translatePage();

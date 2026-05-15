@@ -110,6 +110,7 @@ body {
     color: white;
 }
 
+
 /* ======================================
    BUTTONS
 ====================================== */
@@ -137,7 +138,7 @@ body {
 .hero {
     position: relative;
     min-height: 100vh;
-    background-image: url('../img/hero.jpg');
+    background-image: url('../img/hero.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -147,7 +148,7 @@ body {
 .overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.55);
+    background-color: rgba(0, 0, 0, 0.35);
 }
 
 .hero-content {
@@ -155,18 +156,133 @@ body {
     z-index: 2;
 }
 
+.hero .row {
+    padding-top: 180px;
+    padding-bottom: 100px;
+    align-items: flex-end !important;
+}
+
 .hero h1 {
     color: white;
-    font-size: 70px;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 20px;
+    font-size: 58px;
+    font-weight: 700;
+    line-height: 1.05;
+    max-width: 900px;
+    margin-bottom: 25px;
 }
 
 .hero p {
     color: white;
-    font-size: 18px;
-    max-width: 700px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 760px;
+}
+
+/* ======================================
+   REGISTRO
+====================================== */
+
+.registro-section {
+    background-color: var(--verde);
+    padding: 70px 0 30px;
+}
+
+.registro-section h2 {
+    color: white;
+    font-size: 54px;
+    font-weight: 700;
+    margin-bottom: 35px;
+}
+
+.register-form .row {
+    margin-bottom: 20px;
+}
+
+.custom-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.45);
+    padding: 12px 0;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.contact-box p {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 28px;
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--beige);
+}
+
+.footer-logo {
+    width: 230px;
+    margin-top: 35px;
+}
+
+.footer-bottom {
+    border-top: 2px solid rgba(255, 255, 255, 0.35);
+    margin-top: 60px;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: white;
+    margin-bottom: 8px;
+}
+
+
+/* ======================================
+   WHATSAPP
+====================================== */
+
+.whatsapp-button {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(5px);
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    z-index: 10;
+    transition: 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #25D366;
+    border-color: #25D366;
+    color: white;
 }
 
 
@@ -175,13 +291,13 @@ body {
 ====================================== */
 
 @media (max-width: 991px) {
+
     .custom-navbar {
         top: 10px;
     }
 
     .custom-navbar .container {
         height: auto;
-
         padding-top: 20px;
         padding-bottom: 20px;
     }
@@ -192,13 +308,81 @@ body {
 
     .navbar-nav {
         gap: 15px;
-
         margin-bottom: 20px;
     }
 
     .navbar-right {
         flex-direction: column;
-
-        align-items: flex-start !important;
+        align-items: flex-start;
+        width: 100%;
+        gap: 20px;
     }
+
+    .language-selector {
+        width: 100%;
+    }
+
+    .language-button {
+        padding-left: 0;
+    }
+
+    .language-dropdown {
+        min-width: 160px;
+    }
+
+    .language-dropdown.dropdown-menu-end {
+        right: auto !important;
+        left: 0 !important;
+    }
+
+    .hero .row {
+        padding-top: 160px;
+        padding-bottom: 80px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .whatsapp-button {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .registro-section {
+        padding: 50px 0 25px;
+    }
+
+    .registro-section h2 {
+        font-size: 42px;
+        margin-bottom: 25px;
+    }
+
+    .contact-box p {
+        font-size: 17px;
+    }
+
+    .footer-logo {
+        width: 180px;
+    }
+
+    .social-icons a {
+        font-size: 24px;
+    }
+
+    .footer-bottom {
+        margin-top: 40px;
+    }
+
+    .custom-input {
+        font-size: 15px;
+    }
+
 }

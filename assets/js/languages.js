@@ -1,20 +1,55 @@
 const translations = {
+
     es: {
         nav_about: "¿Quiénes Somos?",
         nav_program: "Programa para extranjeros",
         nav_accommodation: "Hospedaje",
         nav_volunteering: "Voluntariado",
         nav_register: "Regístrate",
+        hero_title: "ROMPIENDO BARRERAS CON IDIOMAS, CONSTRUYENDO UN MUNDO MEJOR.",
+        hero_text: "CÚCUTA, TIERRA DE FRONTERAS Y CORAZÓN CÁLIDO, DONDE LA HISTORIA, LA CULTURA Y LA HOSPITALIDAD SE ENCUENTRAN PARA CREAR EXPERIENCIAS INOLVIDABLES.",
         language_name: "Español",
-        language_short: "ES"
+        language_short: "ES",
+        register_title: "Regístrate",
+        first_name: "Primer nombre",
+        middle_name: "Segundo nombre",
+        last_name: "Primer apellido",
+        second_last_name: "Segundo apellido",
+        email: "Correo electrónico",
+        phone: "Número de teléfono",
+        contact_title: "Contáctanos",
+        contact_city: "Cúcuta, Colombia",
+        contact_email: "cucutavoluntariado@gmail.com",
+        contact_address: "Calle #X-XX, Carrera X, Edificio XXXXX, Barrio XXXXX",
+        contact_nit: "NIT XXXXXXXXXXX",
+        footer_created: "Created 2024",
+        footer_powered: "Powered by CREATIC",
     },
+
     en: {
         nav_about: "Who Are We?",
         nav_program: "Program for Foreigners",
         nav_accommodation: "Accommodation",
         nav_volunteering: "Volunteering",
         nav_register: "Register",
+        hero_title: "BREAKING LANGUAGE BARRIERS, BUILDING A BETTER WORLD.",
+        hero_text: "CÚCUTA, LAND OF BORDERS AND WARM HEARTS, WHERE HISTORY, CULTURE AND HOSPITALITY COME TOGETHER TO CREATE UNFORGETTABLE EXPERIENCES.",
         language_name: "English",
-        language_short: "EN"
+        language_short: "EN",
+        register_title: "Register",
+        first_name: "First name",
+        middle_name: "Middle name",
+        last_name: "Last name",
+        second_last_name: "Second last name",
+        email: "Email",
+        phone: "Phone number",
+        contact_title: "Contact Us",
+        contact_city: "Cúcuta, Colombia",
+        contact_email: "cucutavoluntariado@gmail.com",
+        contact_address: "Street #X-XX, Avenue X, Building XXXXX, Neighborhood XXXXX",
+        contact_nit: "TAX ID XXXXXXXXXXX",
+        footer_created: "Created 2024",
+        footer_powered: "Powered by CREATIC",
     }
+
 };
