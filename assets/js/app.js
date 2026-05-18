@@ -13,7 +13,6 @@ function cargarComponente(id, archivo) {
 
 cargarComponente('navbar', 'components/navbar.html');
 cargarComponente('registro', 'components/registro.html');
-cargarComponente('footer', 'components/footer.html');
 
 
 /* ======================================
@@ -28,6 +27,15 @@ function translatePage() {
     if (currentLanguageElement) {
         currentLanguageElement.textContent =
             translations[currentLanguage].language_short;
+        const pageTitle =
+            document.getElementById('pageTitle');
+
+        if (pageTitle) {
+
+            pageTitle.textContent =
+                translations[currentLanguage].page_about_title;
+
+        }
     }
     document.querySelectorAll('.translate')
         .forEach(element => {
@@ -45,6 +53,25 @@ function translatePage() {
                     translations[currentLanguage][key];
             }
         });
+    const aboutSlide1 =
+        document.getElementById('aboutSlide1');
+    const aboutSlide2 =
+        document.getElementById('aboutSlide2');
+    const aboutSlide3 =
+        document.getElementById('aboutSlide3');
+    if (aboutSlide1) {
+        aboutSlide1.src =
+            `assets/img/aboutSlide1_${currentLanguage}.png`;
+    }
+
+    if (aboutSlide2) {
+        aboutSlide2.src =
+            `assets/img/aboutSlide2_${currentLanguage}.png`;
+    }
+    if (aboutSlide3) {
+        aboutSlide3.src =
+            `assets/img/aboutSlide3_${currentLanguage}.png`;
+    }
 }
 
 function changeLanguage(language) {
@@ -59,6 +86,42 @@ document.addEventListener('click', function (e) {
             button.dataset.language;
         changeLanguage(selectedLanguage);
     }
+});
+
+/* ======================================
+   ABOUT SLIDER
+====================================== */
+
+document.addEventListener('click', function (e) {
+
+    const slider =
+        document.getElementById('aboutSlider');
+
+    if (!slider) return;
+
+    const slideWidth =
+        slider.clientWidth;
+
+    // SIGUIENTE
+    if (e.target.closest('#aboutNext')) {
+
+        slider.scrollBy({
+            left: slideWidth,
+            behavior: 'smooth'
+        });
+
+    }
+
+    // ANTERIOR
+    if (e.target.closest('#aboutPrev')) {
+
+        slider.scrollBy({
+            left: -slideWidth,
+            behavior: 'smooth'
+        });
+
+    }
+
 });
 
 translatePage();
